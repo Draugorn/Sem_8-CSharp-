@@ -130,9 +130,13 @@ int Direction_filler (int [,] Array, int coord_1, int coord_2, int current_coord
 {
 if (counter == 1)
 {
-  for (int i = current_coord_2; i < coord_2; i++)
+  if (current_coord_2 != coord_2-1)
   {
-    Array [current_coord_1, i] = numbers;
+  if (Array[current_coord_1, current_coord_2+1] == 0)
+  {
+    for (int i = current_coord_2; i < coord_2; i++)
+  {
+    Array[current_coord_1, i] = numbers;
     numbers++;
     current_coord_2 = i;
     if (i != coord_2-1)
@@ -142,8 +146,14 @@ if (counter == 1)
       i = coord_2;
     };
     };
-  }
-  for (int i = current_coord_1+1; i < coord_1; i++)
+  };
+  };
+  };
+  if (current_coord_1 != coord_1-1)
+  {
+  if (Array[current_coord_1+1,current_coord_2] == 0)
+  {
+      for (int i = current_coord_1+1; i < coord_1; i++)
   {
    Array[i, current_coord_2] = numbers;
    numbers++;
@@ -158,15 +168,13 @@ if (counter == 1)
   }
   counter++;
   Direction_filler(Array_62,coord_a,coord_b,current_coord_1,current_coord_2,numbers,counter);
+  }
+}
 }
 else if (counter == 2)
 {
-  Console.WriteLine(counter);
-  Console.WriteLine(current_coord_2);
-  Console.WriteLine(coord_2);
   for (int i = current_coord_2-1; i > -1; i--)
   {
-    Console.WriteLine(current_coord_2);
     Array[current_coord_1, i] = numbers;
     numbers++;
     current_coord_2 = i;
@@ -174,17 +182,32 @@ else if (counter == 2)
     {
     if (Array[current_coord_1, i-1] != 0)
     {
-      i = coord_2;
+      i = -1;
     };
     };
   };
+  for (int i = current_coord_1-1; i > -1; i--)
+  {
+   Array[i, current_coord_2] = numbers;
+   numbers++;
+   current_coord_1 = i;
+    if (i != coord_1-1)
+    {
+    if (Array[i-1, current_coord_2] != 0)
+    {
+      i = -1;
+    };
+    };  
+  }
+  counter++;
+  Direction_filler(Array_62,coord_a,coord_b,current_coord_1,current_coord_2,numbers,counter);
 } 
 else if (counter > 2)
 {
   counter = 1;
+  Direction_filler(Array_62,coord_a,coord_b,current_coord_1,current_coord_2,numbers,counter);
 };
-return counter;
+return 0;
 };
-
 Direction_filler(Array_62,coord_a,coord_b,current_coord_1,current_coord_2,numbers,counter);
 Printer(Array_62, coord_a, coord_b);
