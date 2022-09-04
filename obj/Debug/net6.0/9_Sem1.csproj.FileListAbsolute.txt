@@ -1,0 +1,15 @@
+D:\GB\Csharp_sem\9_Sem1\bin\Debug\net6.0\9_Sem1.exe
+D:\GB\Csharp_sem\9_Sem1\bin\Debug\net6.0\9_Sem1.deps.json
+D:\GB\Csharp_sem\9_Sem1\bin\Debug\net6.0\9_Sem1.runtimeconfig.json
+D:\GB\Csharp_sem\9_Sem1\bin\Debug\net6.0\9_Sem1.dll
+D:\GB\Csharp_sem\9_Sem1\bin\Debug\net6.0\9_Sem1.pdb
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\9_Sem1.csproj.AssemblyReference.cache
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\9_Sem1.GeneratedMSBuildEditorConfig.editorconfig
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\9_Sem1.AssemblyInfoInputs.cache
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\9_Sem1.AssemblyInfo.cs
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\9_Sem1.csproj.CoreCompileInputs.cache
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\9_Sem1.dll
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\refint\9_Sem1.dll
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\9_Sem1.pdb
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\9_Sem1.genruntimeconfig.cache
+D:\GB\Csharp_sem\9_Sem1\obj\Debug\net6.0\ref\9_Sem1.dll
