@@ -13,6 +13,9 @@ for (int i = 0; i < coord_1; i++)
   };
 
 // Task 54
+// Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+
+Console.WriteLine("Printing an array");
 
 int a = 5;
 int b = 5;
@@ -44,9 +47,14 @@ for (int i = 0; i < a; i++)
   };
   };
   };
+  
+Console.WriteLine("Printing an array with sorted numbers");
 // Printing the amended array
   Printer(Array_54, a, b);
-  // Task 56
+
+// Task 56
+//Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+
 Console.WriteLine();
 Console.WriteLine();
 
@@ -61,6 +69,7 @@ for (int i = 0; i < z; i++)
       Array_56[i, j] = RND_56.Next(0,11);
     }
   };
+Console.WriteLine("Printing an array");
 // Printing the initial array
    Printer(Array_56, z, x);
 
@@ -84,7 +93,8 @@ int Min_i = 0;
 
   Console.WriteLine("The line with the minimal sum of numbers is line {0}, the sum of elements is {1}", Min_i, Min );
 
-  // Task  58
+// Task  58
+//Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 Console.WriteLine();
 Console.WriteLine();
 
@@ -103,7 +113,7 @@ for (int i = 0; i < coord_y; i++)
       Array_58_2[i, j] = RND_58.Next(0,11);
     }
   };
-
+Console.WriteLine("Printing the matrixes");
   Printer(Array_58_1,coord_y,coord_x);
   Printer(Array_58_2,coord_y,coord_x);
 int [,] Array_58_3 = new int [coord_y, coord_x];
@@ -114,10 +124,12 @@ for (int i = 0; i < coord_y; i++)
 Array_58_3 [i,j] = Array_58_1 [i,j]*Array_58_2[i,j];
     };
   };
-
+Console.WriteLine("Printing the resulting matrix");
 Printer(Array_58_3, coord_y, coord_x);
 
-// Task 
+// Task 62
+// Заполните спирально массив 4 на 4. 
+// N.B. - я отлично понимаю, что это далеко не самое элегантное решение задачи и понимаю, как оно должно было бы выглядеть, но тут уже пошел на принцип и захотел решить самым базовым функционалом (:
  int coord_a = 4;
  int coord_b = 4;
  int numbers = 1;
@@ -125,7 +137,7 @@ Printer(Array_58_3, coord_y, coord_x);
  int current_coord_1 = 0;
  int current_coord_2 = 0;
  int [,] Array_62 = new int [coord_a, coord_b];
-
+// Можно также решить через применение Matrix.
 int Direction_filler (int [,] Array, int coord_1, int coord_2, int current_coord_1, int current_coord_2, int numbers, int counter)
 {
 if (counter == 1)
@@ -173,6 +185,10 @@ if (counter == 1)
 }
 else if (counter == 2)
 {
+if (current_coord_2 != 0)
+  {
+  if (Array[current_coord_1, current_coord_2-1] == 0)
+  {
   for (int i = current_coord_2-1; i > -1; i--)
   {
     Array[current_coord_1, i] = numbers;
@@ -186,6 +202,12 @@ else if (counter == 2)
     };
     };
   };
+  };
+  };
+  if (current_coord_1 != 0)
+  {
+  if (Array[current_coord_1-1,current_coord_2] == 0)
+  {
   for (int i = current_coord_1-1; i > -1; i--)
   {
    Array[i, current_coord_2] = numbers;
@@ -197,8 +219,12 @@ else if (counter == 2)
     {
       i = -1;
     };
-    };  
-  }
+    };
+  };
+  current_coord_2 = current_coord_2+1;
+  };
+  };  
+  
   counter++;
   Direction_filler(Array_62,coord_a,coord_b,current_coord_1,current_coord_2,numbers,counter);
 } 
@@ -209,5 +235,7 @@ else if (counter > 2)
 };
 return 0;
 };
+
 Direction_filler(Array_62,coord_a,coord_b,current_coord_1,current_coord_2,numbers,counter);
+Console.WriteLine("Printing the array (filled like a whirpool)");
 Printer(Array_62, coord_a, coord_b);
